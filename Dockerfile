@@ -24,4 +24,4 @@ RUN yes | sdkmanager --install "tools" && rm -rf ${ANDROID_HOME}/emulator
 # # Specific libraries for the current build
 RUN sdkmanager --install "platforms;android-28" && rm -rf ${ANDROID_HOME}/emulator
 RUN sdkmanager --install "build-tools;29.0.2" && rm -rf ${ANDROID_HOME}/emulator
-RUN sdkmanager --install "ndk;21.3.6528147" && rm -rf ${ANDROID_HOME}/emulator
+RUN sdkmanager --install "ndk;21.0.6113669" && rm -rf ${ANDROID_HOME}/emulator

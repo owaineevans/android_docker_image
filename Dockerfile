@@ -15,7 +15,7 @@ RUN mkdir -p ${ANDROID_HOME}/cmdline-tools && \
     rm *tools*linux*.zip
 # Accept sdk licenses
 ENV PATH "$PATH:${ANDROID_HOME}/cmdline-tools/tools/bin"
-# RUN yes | sdkmanager --licenses
+RUN yes | sdkmanager --licenses
 # RUN sdkmanager --install "emulator" && rm -rf /tmp/*
 RUN yes | sdkmanager --install "platform-tools" && rm -rf ${ANDROID_HOME}/emulator
 RUN yes | sdkmanager --install "tools" && rm -rf ${ANDROID_HOME}/emulator

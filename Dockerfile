@@ -26,3 +26,5 @@ RUN sdkmanager --install "platforms;android-28" && rm -rf ${ANDROID_HOME}/emulat
 RUN sdkmanager --install "build-tools;29.0.2" && rm -rf ${ANDROID_HOME}/emulator
 # This is massive (3.8G) so only install one ndk
 RUN sdkmanager --install "ndk;21.0.6113669" && rm -rf ${ANDROID_HOME}/emulator
+# Use a volume to cache the .gradle build
+VOLUME ["/root/.gradle"]

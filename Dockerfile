@@ -25,3 +25,9 @@ RUN yes | sdkmanager --install "tools" && rm -rf ${ANDROID_HOME}/emulator
 RUN sdkmanager --install "platforms;android-28" && rm -rf ${ANDROID_HOME}/emulator
 RUN sdkmanager --install "build-tools;29.0.2" && rm -rf ${ANDROID_HOME}/emulator
 RUN sdkmanager --install "ndk;21.0.6113669" && rm -rf ${ANDROID_HOME}/emulator
+
+FROM scratch
+COPY --from=base / /
+# re-do env
+ENV ANDROID_HOME /opt/android-sdk
+ENV PATH "$PATH:${ANDROID_HOME}/cmdline-tools/tools/bin"

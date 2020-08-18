@@ -31,3 +31,4 @@ COPY --from=base / /
 # re-do env
 ENV ANDROID_HOME /opt/android-sdk
 ENV PATH "$PATH:${ANDROID_HOME}/cmdline-tools/tools/bin"
+ENV JAVA_HOME /usr/local/openjdk-8

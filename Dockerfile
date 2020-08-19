@@ -17,14 +17,14 @@ RUN mkdir -p ${ANDROID_HOME}/cmdline-tools && \
 ENV PATH "$PATH:${ANDROID_HOME}/cmdline-tools/tools/bin"
 RUN yes | sdkmanager --licenses
 # RUN sdkmanager --install "emulator" && rm -rf /tmp/*
-RUN yes | sdkmanager --install "platform-tools" && rm -rf ${ANDROID_HOME}/emulator
-RUN yes | sdkmanager --install "tools" && rm -rf ${ANDROID_HOME}/emulator
+RUN yes | sdkmanager --install "platform-tools"
+RUN yes | sdkmanager --install "tools"
 # RUN yes | sdkmanager --install "ndk-bundle"
 
 # Specific libraries for the current build
-RUN sdkmanager --install "platforms;android-28" && rm -rf ${ANDROID_HOME}/emulator
-RUN sdkmanager --install "build-tools;29.0.2" && rm -rf ${ANDROID_HOME}/emulator
+RUN sdkmanager --install "platforms;android-28"
+RUN sdkmanager --install "build-tools;29.0.2"
 # This is massive (3.8G) so only install one ndk
-RUN sdkmanager --install "ndk;21.0.6113669" && rm -rf ${ANDROID_HOME}/emulator
+RUN sdkmanager --install "ndk;21.0.6113669"
 # Use a volume to cache the .gradle build
 VOLUME ["/root/.gradle/caches"]

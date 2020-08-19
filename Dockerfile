@@ -28,3 +28,4 @@ RUN sdkmanager --install "build-tools;29.0.2"
 RUN sdkmanager --install "ndk;21.0.6113669"
 # Use a volume to cache the .gradle build
 VOLUME ["/root/.gradle/caches"]
+VOLUME ["/root/.gradle/wrapper"]

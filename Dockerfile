@@ -26,6 +26,3 @@ RUN sdkmanager --install "platforms;android-28"
 RUN sdkmanager --install "build-tools;29.0.2"
 # This is massive (3.8G) so only install one ndk
 RUN sdkmanager --install "ndk;21.0.6113669"
-# Use a volume to cache the .gradle build
-VOLUME ["/root/.gradle/caches"]
-VOLUME ["/root/.gradle/wrapper"]
